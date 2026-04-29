@@ -7,6 +7,25 @@ import tempfile
 import os
 import pandas as pd
 
+
+
+# --- CONFIGURATION DE LA PAGE ---
+st.set_page_config(page_title="sEPSC Pipeline", layout="wide")
+
+# --- EN-TÊTE INSTITUTIONNEL (Harmonisé) ---
+col_l, col_r = st.columns([2, 5]) 
+with col_l:
+    try: 
+        st.image("logo_chavis_final.png", width=360) 
+    except: 
+        st.info("Manzoni Lab - Branding") 
+with col_r:
+    st.markdown("# Pipeline Expert sEPSC : Denoising, Cinétique & Exportation")
+    st.markdown("### Manzoni Lab | Analyse de la Plasticité Synaptique")
+    st.markdown("#### *Extraction automatisée de la Rhéobase (I/V), Sag, Rin, Cm et Tau*")
+
+
+
 # --- FONCTIONS DE CALCUL EXPERT ---
 
 def apply_bessel_filter(data, fs, cutoff=2000, order=4):
@@ -43,9 +62,7 @@ def calculate_rise_time_expert(segment_y, dt):
         return t90 - t10
     except: return 0
 
-# --- INTERFACE ---
-st.set_page_config(layout="wide", page_title="sEPSC Pipeline")
-st.title("🔬 Pipeline Expert sEPSC : Denoising, Cinétique & Exportation")
+
 
 # --- SIDEBAR ---
 st.sidebar.header("1. Bessel Filter (Denoising)")
