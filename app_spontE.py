@@ -21,8 +21,6 @@ with col_l:
         st.info("Manzoni Lab - Branding") 
 with col_r:
     st.markdown("# Pipeline Expert sEPSC : Denoising, Cinétique & Exportation")
-    st.markdown("### Manzoni Lab | Analyse de la Plasticité Synaptique")
-    st.markdown("#### *Extraction automatisée de la Rhéobase (I/V), Sag, Rin, Cm et Tau*")
 
 
 
