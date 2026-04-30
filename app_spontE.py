@@ -26,7 +26,7 @@ Biophysically, this means all frequencies are delayed equally, preserving the ex
 
 #### 2. Multi-Scale Template Matching
 Synaptic events originating from distal dendrites undergo **passive dendritic filtering** before reaching the somatic patch pipette, resulting in slower, broader waveforms compared to proximal synapses. 
-Instead of a single template, the algorithm convolves the trace with multiple bi-exponential templates having varying decay constants ($\tau = 2, 5, 10, 15$ ms). A sliding cross-correlation maximizes the detection of heterogeneous events buried in high RMS noise.
+Instead of a single template, the algorithm convolves the trace with multiple bi-exponential templates having varying decay constants ($\\tau = 2, 5, 10, 15$ ms). A sliding cross-correlation maximizes the detection of heterogeneous events buried in high RMS noise.
 
 #### 3. Kinetics: Rise Time 10-90%
 The 10-90% rise time is calculated to avoid the noise present at the absolute peak and the baseline drift at the onset. The algorithm uses **linear interpolation** between the digitized sampling points to pinpoint the exact millisecond the current crosses these thresholds, bypassing the limits of the sampling frequency.
@@ -53,7 +53,7 @@ Biophysiquement, cela signifie que toutes les fréquences sont retardées de man
 
 #### 2. Détection par "Template Matching" Multi-Échelle
 Les événements synaptiques provenant des dendrites distales subissent un **filtrage dendritique passif** avant d'atteindre la pipette au soma, ce qui élargit et ralentit leur forme d'onde. 
-Au lieu d'un seul modèle, l'algorithme génère des modèles bi-exponentiels avec différentes constantes de temps de décroissance ($\tau = 2, 5, 10, 15$ ms). Une corrélation croisée glissante identifie les événements hétérogènes enfouis dans le bruit.
+Au lieu d'un seul modèle, l'algorithme génère des modèles bi-exponentiels avec différentes constantes de temps de décroissance ($\\tau = 2, 5, 10, 15$ ms). Une corrélation croisée glissante identifie les événements hétérogènes enfouis dans le bruit.
 
 #### 3. Cinétique : Rise Time 10-90%
 Le temps de montée 10-90% est utilisé pour s'affranchir du bruit au pic absolu et des fluctuations de la ligne de base au départ. L'algorithme utilise une **interpolation linéaire** entre les points d'échantillonnage pour trouver la milliseconde exacte où le signal franchit ces seuils.
@@ -75,7 +75,9 @@ T = {
     "English": {
         "title": "# sEPSC Expert Pipeline: Denoising, Kinetics & Export",
         "branding": "Chavis Lab - Biophysics",
-        "readme_link": "📖 View README (Full Documentation)",
+        "readme_link": "📖 View README (Documentation)",
+        "cite_header": "🎓 Cite this App",
+        "cite_text": "If you use this tool, please cite:",
         "tab_analysis": "📈 Analysis Pipeline",
         "tab_theory": "📚 Biophysics & Math Theory",
         "theory_text": THEORY_EN,
@@ -108,6 +110,8 @@ T = {
         "title": "# Pipeline Expert sEPSC : Denoising, Cinétique & Exportation",
         "branding": "Chavis Lab - Biophysique",
         "readme_link": "📖 Voir le README (Documentation)",
+        "cite_header": "🎓 Citer cette App",
+        "cite_text": "Si vous utilisez cet outil, merci de citer :",
         "tab_analysis": "📈 Pipeline d'Analyse",
         "tab_theory": "📚 Théorie Biophysique & Maths",
         "theory_text": THEORY_FR,
@@ -138,10 +142,12 @@ T = {
     }
 }[lang]
 
-# --- LIEN VERS LE README ---
-st.sidebar.markdown(f"**[{T['readme_link']}](https://github.com/OliManzoni/Manzoni_Chavis_Lab_spontE/tree/main/README.md)**")
+# --- LIEN VERS LE README & DOI ---
+st.sidebar.markdown(f"**[{T['readme_link']}](https://github.com/OliManzoni/Manzoni_Chavis_Lab_spontE/blob/main/README.md)**")
+st.sidebar.markdown(f"### {T['cite_header']}")
+st.sidebar.markdown("[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19915015.svg)](https://doi.org/10.5281/zenodo.19915015)")
+st.sidebar.caption(f"{T['cite_text']}\n*Manzoni, O. J. (2026). Manzoni_Chavis_Lab_spontE. Zenodo. https://doi.org/10.5281/zenodo.19915015*")
 st.sidebar.divider()
-
 
 # --- EN-TÊTE INSTITUTIONNEL ---
 col_l, col_r = st.columns([2, 5]) 
