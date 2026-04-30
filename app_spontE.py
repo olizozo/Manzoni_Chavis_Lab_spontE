@@ -139,8 +139,9 @@ T = {
 }[lang]
 
 # --- LIEN VERS LE README ---
-st.sidebar.markdown(f"**[{T['readme_link']}](https://github.com/OliManzoni/Manzoni_Chavis_Lab_EPHYS_Stats/blob/main/README.md)**")
+st.sidebar.markdown(f"**[{T['readme_link']}](https://github.com/OliManzoni/Manzoni_Chavis_Lab_spontE/tree/main/README.md)**")
 st.sidebar.divider()
+
 
 # --- EN-TÊTE INSTITUTIONNEL ---
 col_l, col_r = st.columns([2, 5]) 
