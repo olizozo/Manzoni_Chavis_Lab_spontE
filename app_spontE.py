@@ -75,6 +75,7 @@ T = {
     "English": {
         "title": "# sEPSC Expert Pipeline: Denoising, Kinetics & Export",
         "branding": "Chavis Lab - Biophysics",
+        "readme_link": "📖 View README (Full Documentation)",
         "tab_analysis": "📈 Analysis Pipeline",
         "tab_theory": "📚 Biophysics & Math Theory",
         "theory_text": THEORY_EN,
@@ -106,6 +107,7 @@ T = {
     "Français": {
         "title": "# Pipeline Expert sEPSC : Denoising, Cinétique & Exportation",
         "branding": "Chavis Lab - Biophysique",
+        "readme_link": "📖 Voir le README (Documentation)",
         "tab_analysis": "📈 Pipeline d'Analyse",
         "tab_theory": "📚 Théorie Biophysique & Maths",
         "theory_text": THEORY_FR,
@@ -136,6 +138,10 @@ T = {
     }
 }[lang]
 
+# --- LIEN VERS LE README ---
+st.sidebar.markdown(f"**[{T['readme_link']}](https://github.com/OliManzoni/Manzoni_Chavis_Lab_EPHYS_Stats/blob/main/README.md)**")
+st.sidebar.divider()
+
 # --- EN-TÊTE INSTITUTIONNEL ---
 col_l, col_r = st.columns([2, 5]) 
 with col_l:
@@ -150,7 +156,7 @@ st.divider()
 tab_analysis, tab_theory = st.tabs([T["tab_analysis"], T["tab_theory"]])
 
 # ==========================================
-# ONGLET 2 : THEORIE BIOPHYSIQUE (Menu Étudiants)
+# ONGLET 2 : THEORIE BIOPHYSIQUE
 # ==========================================
 with tab_theory:
     st.markdown(T["theory_text"])
